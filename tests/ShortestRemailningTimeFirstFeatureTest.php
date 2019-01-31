@@ -38,7 +38,7 @@ class ShortestRemainingTimeFirstFeatureTest extends BaseTestCase
 
 
         // when
-        $schedule = ShortestRemainingTimeFirst::execute($given);
+        $subject = ShortestRemainingTimeFirst::execute($given);
 
         // then
         $this->assertEquals(
@@ -88,7 +88,7 @@ class ShortestRemainingTimeFirstFeatureTest extends BaseTestCase
                     'process' => 'terminate',
                 ],
             ],
-            $schedule->cpu()
+            $subject->cpu()
         );
 
         $this->assertEquals(
@@ -114,17 +114,17 @@ class ShortestRemainingTimeFirstFeatureTest extends BaseTestCase
                     'process' => 'terminate',
                 ],
             ],
-            $schedule->io()
+            $subject->io()
         );
 
         $this->assertEquals(
             31 / 35 * 100,
-            $scheduler->cpuUtilization()
+            $subject->cpuUtilization()
         );
 
         $this->assertEquals(
             22 / 30 * 100,
-            $scheduler->ioUtilization()
+            $subject->ioUtilization()
         );
     }
 }

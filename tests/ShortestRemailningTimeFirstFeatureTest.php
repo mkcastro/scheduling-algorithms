@@ -38,7 +38,7 @@ class ShortestRemainingTimeFirstFeatureTest extends BaseTestCase
 
 
         // when
-        $subject = ShortestRemainingTimeFirst::execute($given);
+        $subject = new ShortestRemainingTimeFirst($given);
 
         // then
         $this->assertEquals(

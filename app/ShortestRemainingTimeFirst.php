@@ -10,6 +10,8 @@ class ShortestRemainingTimeFirst
     {
         $this->data = $data;
 
+        $this->execute();
+
         return $this;
     }
 
@@ -97,5 +99,20 @@ class ShortestRemainingTimeFirst
     public function ioUtilization()
     {
         return 22 / 30 * 100;
+    }
+
+    public function execute()
+    {
+        $time = 0;
+        foreach ($this->data as $key => $job) {
+            if ($time === $job['arrival_time']) {
+                for ($i=0; $i < $job['cpu_burst']; $i++) {
+                    // search times table
+                    if () {
+                        # code...
+                    }
+                }
+            }
+        }
     }
 }
